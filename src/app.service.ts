@@ -17,7 +17,7 @@ export class AppService {
   async findAll(id: string): Promise<any> {
     this.logger.log(`[findAll items] initialize findAll service`)
     try {
-      return await this.itemModel.find().exec()
+      return await this.itemModel.find({ id }).exec()
     } catch (error) {
       return
     }
